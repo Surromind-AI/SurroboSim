@@ -1,0 +1,94 @@
+    {
+        "ur5":{
+            "pose":[-0.6,-0.8,0.65],
+            "_pose":[-0.3,-0.9,0.3],
+            "ori":[0,0,0],
+            "quant":"None",
+            "urdf":"assets/ur5/ur5.urdf"
+        },
+        "ur5_mount":{
+            "_pose":[-0.3,-0.9,0.2],
+            "pose":[0,-1,0.2],
+            "ori":[0,0,0],
+            "quant":"None",
+            "urdf":"assets/ur5/mount.urdf"
+        },
+        "ur5_start_pose":{
+            "pose":[-0.3, 0,0.4],
+            "ori":[3.141592,0,0],
+            "quant":"None"
+
+        },
+        "MountingBar":{
+            "pose":[0,0,0.2],
+            "ori":[0,0,0],
+            "quant":"None",
+            "urdf":"assets/objects/SM_ShelfMetalHold_72.urdf"
+        },
+        "basket":{
+            "pose":[0.507, -1,0],
+            "ori":[0,0,0],
+            "quant":"None",
+            "urdf":"assets/tote/toteA_large.urdf"
+        },
+        "__basket":{
+            "pose":[0.5, 1, 0.01],
+            "ori":[0,0,0],
+            "quant":"None",
+            "urdf":"assets/tote/toteA_large.urdf"
+        },
+        "HangingDummy_1":{
+            "pose":[0.507, -0.051,0.04],
+            "ori":[0,1.570796,0],
+            "quant":"None",
+            "urdf":"assets/dummy/dummy_wide.urdf",
+            "description":"rotate Dummy 세로로 세움, 바닥에 붙임"
+        },
+        "HangingDummy":{
+            "pose":[0.507, -0.051,0.111],
+            "ori":"None",
+            "quant":[ 0.03619656711816788, -0.008412942290306091, 0.06838896870613098, 0.9969663619995117],
+            "urdf":"assets/dummy/dummy_wide.urdf",
+            "description":"Original rotate HangingDummy"
+        },
+        "HangingDummyWide":{
+            "pose":[0.726,-0.050,0.016],
+            "ori":"None",
+            "quant":[0.0015723294345661998, 8.80118750501424e-06, 8.105460437946022e-06, 0.9999987483024597],
+            "urdf":"assets/dummy/dummy_wide.urdf"
+        },
+        "HangingDummyLong":{
+            "pose":[0.695,-0.050,0.020],
+            "ori":"None",
+            "quant":[-0.0005758224870078266, 5.3369778470369056e-05, -0.001109974691644311, 0.9999992251396179],
+            "urdf":"assets/dummy/dummy_long.urdf"
+        },
+        "TestDummy":{
+            "pose":[0.695,-0.050,0.020],
+            "ori":"None",
+            "quant":[-0.0005758224870078266, 5.3369778470369056e-05, -0.001109974691644311, 0.9999992251396179],
+            "_urdf":"assets/dummy/dummy_test.urdf",
+            "urdf":"assets/dummy/dummy_wide.urdf"
+        },
+
+        "Scalse":{
+            "scale_factor": 0.01,
+            "_move_x": 0,
+            "move_x": -500,
+            "move_y": 0,
+            "move_z": 0
+        },
+        "scenario":{
+            "SC":"SC2",
+            "SC_description":"Select SC1 or SC2",
+            "HD":"HD",
+            "HD_description":"select HD HDL HDW",
+            "EP":"1",
+            "EP_description":"10 episode select 0~9"
+        },
+        "HD_select":{
+            "HD":"HangingDummy",
+            "HDL":"HangingDummyLong",
+            "HDW":"HangingDummyWide"
+        }
+    }

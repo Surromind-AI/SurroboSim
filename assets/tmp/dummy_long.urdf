@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<robot name="dummy_long.urdf">
+  <link name="world">
+    <contact>
+      <lateral_friction value="0.5"/>
+      <rolling_friction value="0.5"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="1.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01 0.01 0.01"/>
+       <mass value="0.1"/>
+       <inertia
+        ixx="5.5211E-06"
+        ixy="7.112E-10"
+        ixz="1.1552E-10"
+        iyy="4.736E-05"
+        iyz="5.0227E-11"
+        izz="4.7564E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="dummy_long.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	<mesh filename="dummy_long.obj" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

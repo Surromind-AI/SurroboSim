@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<robot name="box_dummy">
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4 0.0 1.0"/>
+  </material>
+
+  <link name="base">
+    <visual>
+        <geometry>
+            <box size="0.05 0.01 0.19"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.05 0.01 0.19"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>     
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  <link name="left_fillar">
+   <visual>
+        <geometry>
+            <box size="0.01 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.01 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>       
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  
+
+  <joint name="base_to_left_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="left_fillar"/>
+    <origin rpy="0 0 0" xyz="0.02 0 0.1"/>
+  </joint>
+
+  <link name="right_fillar">
+   <visual>
+        <geometry>
+            <box size="0.01 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.01 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>       
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  <joint name="base_to_right_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="right_fillar"/>
+    <origin rpy="0 0 0" xyz="-0.02 0 0.1"/>
+  </joint>
+
+  <link name="top_fillar">
+   <visual>
+        <geometry>
+            <box size="0.05 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+         <box size="0.05 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>     
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  <joint name="base_to_top_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="top_fillar"/>
+    <origin rpy="0 0 0" xyz="0 0 0.11"/>
+  </joint>
+
+</robot>

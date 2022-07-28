@@ -1,0 +1,14 @@
+{
+    "mesh_path":{
+        "MountingBar":{
+            "path":"utils_pybullet/meshes/illias_obj/SM_ShelfMetalHold_72.urdf",
+            "txt_path":"result_avi/SC1_HD_0_ MountingBar.txt"
+        },
+        "End_point":{
+            "path":"utils_pybullet/meshes/objects/cube_small.urdf"
+        },
+        "UR5":{
+            "path":"./urdf/real_arm.urdf"
+        }
+    }
+}

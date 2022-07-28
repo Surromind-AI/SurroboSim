@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<robot name="box_dummy">
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4 0.0 1.0"/>
+  </material>
+  <material name="transparency">
+    <color rgba="0 0 0 0"/>
+  </material>
+  
+  
+  
+  <!-- set base pose -->
+  <link name="_base">
+    <visual>
+        <geometry>
+            <sphere radius="0.03"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="orange"/>
+    </visual>
+  </link>
+
+  <joint name="base_point" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="_base"/>
+    <child link="base"/>
+  </joint>
+
+
+
+
+
+  <link name="base">
+    <visual>
+        <geometry>
+            <box size="0.07 0.012 0.1460"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.07 0.012 0.1460"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>     
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+  <!-- gripper contact point -->
+  <link name="tool">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.005 0.005 0.005"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <!-- set contact point color -->
+      <material name="transparency"/>
+    </visual>
+  </link>
+  <!-- set gripper contact point -->
+  <joint name="hole_point" type="fixed">
+    <!-- origin rpy="0 0 0" xyz="0 -0.3 -0.0165" -->
+    <origin rpy="0 0 0" xyz="0 0 0.079"/>
+    <parent link="base"/>
+    <child link="tool"/>
+  </joint>
+
+  <link name="left_fillar">
+   <visual>
+        <geometry>
+            <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.025 0 0.079"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.025 0 0.079"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>       
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  
+
+  <joint name="base_to_left_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="left_fillar"/>
+  </joint>
+
+  <link name="right_fillar">
+   <visual>
+        <geometry>
+            <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="-0.025 0 0.079"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="-0.025 0 0.079"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>       
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  <joint name="base_to_right_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="right_fillar"/>
+  </joint>
+
+  <link name="top_fillar">
+   <visual>
+        <geometry>
+            <box size="0.07 0.012 0.017"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0.0935"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+         <box size="0.07 0.012 0.017"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0.0935"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>     
+    </inertial>
+    <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <min_depth>0.003</min_depth>
+          </ode>
+        </contact>
+      </surface>
+  </link>
+
+  <joint name="base_to_top_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="top_fillar"/>
+  </joint>
+
+</robot>

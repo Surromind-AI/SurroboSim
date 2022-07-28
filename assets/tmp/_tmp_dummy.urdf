@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<robot name="box_dummy">
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4 0.0 1.0"/>
+  </material>
+
+  <link name="base">
+    <visual>
+        <geometry>
+            <box size="0.07 0.012 0.1460"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.07 0.012 0.1460"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>     
+    </inertial>
+  </link>
+
+  <link name="left_fillar">
+   <visual>
+        <geometry>
+            <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.025 0 0.079"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.025 0 0.079"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>       
+    </inertial>
+  </link>
+
+  
+
+  <joint name="base_to_left_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="left_fillar"/>
+  </joint>
+
+  <link name="right_fillar">
+   <visual>
+        <geometry>
+            <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="-0.025 0 0.079"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+          <box size="0.02 0.012 0.012"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="-0.025 0 0.079"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>       
+    </inertial>
+  </link>
+
+  <joint name="base_to_right_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="right_fillar"/>
+  </joint>
+
+  <link name="top_fillar">
+   <visual>
+        <geometry>
+            <box size="0.07 0.012 0.017"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0.0935"/>
+        <material name="yellow">
+            <color rgba="1 1 0 1"/>
+        </material>
+    </visual>
+    <collision>
+        <geometry>
+         <box size="0.07 0.012 0.017"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0.0935"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="0.01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>     
+    </inertial>
+  </link>
+
+  <joint name="base_to_top_fillar" type="fixed">
+    <parent link="base"/>
+    <child link="top_fillar"/>
+  </joint>
+
+</robot>
